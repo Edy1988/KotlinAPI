@@ -1,7 +1,7 @@
 class Thermostat {
 
     private var temp = 20
-    private var powerSaveMode = false
+    private var powerSaveMode = true
 
 
     fun getTemp(): Int {

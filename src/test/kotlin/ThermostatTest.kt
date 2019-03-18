@@ -31,6 +31,13 @@ class ThermostatTest{
     }
 
     @Test
+    fun `power save mode is on by default`(){
+        val thermostat = Thermostat()
+        thermostat.increase(6)
+        assertEquals(25, thermostat.getTemp())
+    }
+
+    @Test
     fun `max temp is 25 if power saving mode is ON, temp defaults to 25`(){
         val thermostat = Thermostat()
         thermostat.powerSaveOn()
