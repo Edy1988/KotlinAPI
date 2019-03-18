@@ -28,4 +28,8 @@ class Thermostat {
     fun powerSaveOn() {
         this.powerSaveMode = true
     }
+
+    fun reset() {
+        this.temp = 20
+    }
 }

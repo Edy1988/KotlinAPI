@@ -53,12 +53,14 @@ class ThermostatTest{
         assertEquals(32, thermostat.getTemp())
     }
 
+
+
     @Test
-    fun `when powerSaveMode is off, temp can increase to above 25`(){
+    fun `can reset temp to 20`(){
         val thermostat = Thermostat()
-        thermostat.powerSaveOff()
-        thermostat.increase(7)
-        assertEquals(27, thermostat.getTemp())
+        thermostat.increase(5)
+        thermostat.reset()
+        assertEquals(20, thermostat.getTemp())
     }
 
 }
