@@ -4,9 +4,9 @@ import org.junit.Test
 class ThermostatTest{
     @Test
 
-   fun `default temp is 20`(){
+    fun `default temp is 20`(){
         val thermostat = Thermostat()
-    assertEquals(20, thermostat.getTemp())
+        assertEquals(20, thermostat.getTemp())
     }
 
     @Test
@@ -53,14 +53,36 @@ class ThermostatTest{
         assertEquals(32, thermostat.getTemp())
     }
 
-
-
     @Test
     fun `can reset temp to 20`(){
         val thermostat = Thermostat()
         thermostat.increase(5)
         thermostat.reset()
         assertEquals(20, thermostat.getTemp())
+    }
+
+    @Test
+    fun `shows low usage`(){
+        val thermostat = Thermostat()
+        thermostat.decrease(3)
+        thermostat.getTemp()
+        assertEquals("Low usage", thermostat.showUsage())
+    }
+
+    @Test
+    fun `shows medium usage`(){
+        val thermostat = Thermostat()
+        thermostat.increase(4)
+        thermostat.getTemp()
+        assertEquals("Medium usage", thermostat.showUsage())
+    }
+
+    @Test
+    fun `shows high usage`(){
+        val thermostat = Thermostat()
+        thermostat.increase(5)
+        thermostat.getTemp()
+        assertEquals("High usage", thermostat.showUsage())
     }
 
 }
